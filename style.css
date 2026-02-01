@@ -1,0 +1,59 @@
+html {
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Cutive Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #0a0047;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100vh;
+}
+
+.title {
+  font-size: 3em;
+  color: #00ffd2;
+  text-align: center;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search input {
+  font-family: "Cutive Mono", monospace;
+  background-color: transparent;
+  width: 400px;
+  font-size: 1.4em;
+  border: none;
+  outline: none;
+  margin-top: 25px;
+  color: #00ffd2;
+  text-align: center;
+}
+
+.search input::placeholder {
+  color: #00ffd2;
+  transition: color 0.4s ease;
+}
+
+.search input:focus::placeholder {
+  color: transparent;
+}
+
+.searchBottom {
+  width: 400px;
+  height: 3px;
+  border-radius: 2px;
+  margin-top: 10px;
+  background-color: #ff4499;
+}
