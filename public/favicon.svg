@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 248 268">
+  <style>
+    .mac-shadow { fill: #c8bfa8; }
+    .mac-screen-bezel { fill: #d4cab8; }
+    .mac-screen { fill: #1a2a1a; }
+    .mac-scanline { fill: #2a3f2a; opacity: 0.5; }
+    .mac-disk { fill: #c8bfa8; }
+    .mac-disk-slot { fill: #a8998a; }
+    .mac-logo-text { font-family: Georgia, serif; font-size: 22px; font-weight: bold; fill: #888070; }
+    .mac-vent { fill: none; stroke: #c0b49e; stroke-width: 1.5; }
+    .screen-glow { fill: #3a5f3a; }
+  </style>
+
+  <rect x="8" y="8" width="248" height="268" rx="12" class="mac-shadow"/>
+  <rect x="0" y="0" width="248" height="268" rx="12" fill="#e8e0d0"/>
+  <rect x="18" y="18" width="212" height="165" rx="6" class="mac-screen-bezel"/>
+  <rect x="26" y="26" width="196" height="149" rx="3" class="mac-screen"/>
+  <rect x="26" y="30" width="196" height="4" class="screen-glow" opacity="0.4"/>
+  <rect x="26" y="38" width="196" height="2" class="mac-scanline"/>
+  <rect x="26" y="44" width="196" height="2" class="mac-scanline"/>
+  <rect x="26" y="50" width="196" height="2" class="mac-scanline"/>
+  <rect x="26" y="56" width="196" height="2" class="mac-scanline"/>
+  <text x="124" y="112" text-anchor="middle" font-family="monospace" font-size="42" font-weight="bold" fill="#7ab87a">GT</text>
+  <text x="124" y="155" text-anchor="middle" font-family="monospace" font-size="11" fill="#4a7a4a">grandpatom.net</text>
+  <rect x="80" y="198" width="88" height="8" rx="4" class="mac-disk"/>
+  <rect x="84" y="200" width="80" height="4" rx="2" class="mac-disk-slot"/>
+  <line x1="40" y1="220" x2="208" y2="220" class="mac-vent"/>
+  <line x1="40" y1="227" x2="208" y2="227" class="mac-vent"/>
+  <line x1="40" y1="234" x2="208" y2="234" class="mac-vent"/>
+  <line x1="40" y1="241" x2="208" y2="241" class="mac-vent"/>
+  <text x="124" y="262" text-anchor="middle" class="mac-logo-text">GT</text>
+</svg>
