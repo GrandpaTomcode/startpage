@@ -6,19 +6,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Cutive Mono", monospace;
-  font-weight: 400;
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
   font-style: normal;
-  background-color: #0a0047;
+  background-color: #141413;
   margin: 0px;
   padding: 0px;
   width: 100%;
-  height: 100vh;
+  height: 80vh;
 }
 
 .title {
-  font-size: 3em;
-  color: #00ffd2;
+  font-size: 5em;
+  color: #d97757;
   text-align: center;
 }
 
@@ -30,19 +31,19 @@ body {
 }
 
 .search input {
-  font-family: "Cutive Mono", monospace;
+  font-family: "Lora", serif;
   background-color: transparent;
   width: 400px;
   font-size: 1.4em;
   border: none;
   outline: none;
   margin-top: 25px;
-  color: #00ffd2;
+  color: #faf9f5;
   text-align: center;
 }
 
 .search input::placeholder {
-  color: #00ffd2;
+  color: #faf9f5;
   transition: color 0.4s ease;
 }
 
@@ -51,9 +52,9 @@ body {
 }
 
 .searchBottom {
-  width: 400px;
+  width: 100%;
   height: 3px;
   border-radius: 2px;
-  margin-top: 10px;
-  background-color: #ff4499;
+  margin-top: 20px;
+  background-color: #d97757;
 }
