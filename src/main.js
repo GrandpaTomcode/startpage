@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const greetingText = document.getElementById("greeting");
-  
+
   var getCurrentGreeting = () => {
     const currentHour = new Date().getHours();
 
@@ -20,9 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateGreeting();
   setInterval(updateGreeting, 60000);
-
+  
   const searchForm = document.querySelector(".search");
   searchForm.addEventListener("submit", () => {
-    searchForm.reset();
+    setTimeout(() => {
+      searchForm.reset();
+    }, 250);
   });
 });
