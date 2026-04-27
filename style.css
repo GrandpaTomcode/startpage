@@ -58,3 +58,19 @@ body {
   margin-top: 20px;
   background-color: #d97757;
 }
+
+.linksContainer ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.linksContainer ul li {
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+  color: #d97757;
+  letter-spacing: 1px;
+  list-style-type: none;
+  margin: 20px;
+}
