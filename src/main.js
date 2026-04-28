@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   var getCurrentGreeting = () => {
     const currentHour = new Date().getHours();
 
-    if (currentHour >= 5 && currentHour < 12) {
+    if (currentHour <= 5 && currentHour < 12) {
       return "Good Morning, Tom!";
     } else if (currentHour >= 12 && currentHour < 18) {
       return "Good Afternoon, Tom!";
@@ -49,4 +49,32 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", function () {
     items.forEach(item => item.classList.remove("open"));
   });
+
+  function getWeatherIcon(code) {
+    if (code === 0) return "☀️"; // clear sky
+    if (code <= 2) return "⛅"; // partly cloudy
+    if (code === 3) return "☁️"; // overcast
+    if (code <= 49) return "🌫️"; // fog/mist
+    if (code <= 59) return "🌦️"; // drizzle
+    if (code <= 69) return "🌧️"; // rain
+    if (code <= 79) return "❄️"; // snow
+    if (code <= 82) return "🌧️"; // showers
+    if (code <= 86) return "🌨️"; // snow showers
+    if (code <= 99) return "⛈️"; // thunderstorm
+    return "🌡️";
+  }
+
+  async function getWeather() {
+    const res = await fetch(
+      "https://api.open-meteo.com/v1/forecast?latitude=50.8&longitude=-0.4&current_weather=true&wind_speed_unit=mph",
+    );
+    const data = await res.json();
+    const { temperature, windspeed, weathercode } = data.current_weather;
+    const icon = getWeatherIcon(weathercode);
+
+    document.getElementById("weather").textContent =
+      `${icon} ${temperature}°C · Wind: ${windspeed} mph`;
+  }
+
+  getWeather();
 });
