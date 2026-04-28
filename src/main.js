@@ -20,11 +20,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateGreeting();
   setInterval(updateGreeting, 60000);
-  
+
   const searchForm = document.querySelector(".search");
   searchForm.addEventListener("submit", () => {
     setTimeout(() => {
       searchForm.reset();
     }, 250);
+  });
+
+  const items = document.querySelectorAll(".dropdownBtn");
+
+  items.forEach(item => {
+    item.addEventListener("click", function (e) {
+      e.stopPropagation();
+      this.classList.toggle("open");
+      items.forEach(other => {
+        if (other !== this) {
+          other.classList.remove("open");
+        }
+      });
+    });
+    document.querySelectorAll(".dropdownMenu").forEach(menu => {
+      menu.addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
+    });
+  });
+  document.addEventListener("click", function () {
+    items.forEach(item => item.classList.remove("open"));
   });
 });
