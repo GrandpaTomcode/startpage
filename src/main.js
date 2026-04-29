@@ -50,32 +50,22 @@ document.addEventListener("DOMContentLoaded", () => {
     items.forEach(item => item.classList.remove("open"));
   });
 
-  function getWeatherIcon(code) {
-    if (code === 0) return "☀️"; // clear sky
-    if (code <= 2) return "⛅"; // partly cloudy
-    if (code === 3) return "☁️"; // overcast
-    if (code <= 49) return "🌫️"; // fog/mist
-    if (code <= 59) return "🌦️"; // drizzle
-    if (code <= 69) return "🌧️"; // rain
-    if (code <= 79) return "❄️"; // snow
-    if (code <= 82) return "🌧️"; // showers
-    if (code <= 86) return "🌨️"; // snow showers
-    if (code <= 99) return "⛈️"; // thunderstorm
-    return "🌡️";
-  }
-
   async function getWeather() {
+    const API_KEY = "c2966e28064b8dd33cc823e6383a3cca";
+    const city = "Brighton";
+    console.log("API key:", API_KEY); // before the fetch
     const res = await fetch(
-      "https://api.open-meteo.com/v1/forecast?latitude=50.8&longitude=-0.4&current_weather=true&wind_speed_unit=mph",
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`,
     );
-    const data = await res.json();
-    const { temperature, windspeed, weathercode } = data.current_weather;
-    const icon = getWeatherIcon(weathercode);
 
-    document.getElementById("condition").textContent = `Condition: ${icon}`;
+    const data = await res.json();
+
+    console.log(data);
+    const windSpeedMPH = (data.wind.speed * 2.237).toFixed(1);
+    document.getElementById("location").textContent = data.name;
     document.getElementById("temp").textContent =
-      `: ${parseInt(temperature)}°C`;
-    document.getElementById("wind").textContent = `: ${parseInt(windspeed)} mph`;
+      `${parseInt(data.main.temp)}°C`;
+    document.getElementById("wind").textContent = `${windSpeedMPH} mph`;
   }
 
   getWeather();
