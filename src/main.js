@@ -72,8 +72,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const { temperature, windspeed, weathercode } = data.current_weather;
     const icon = getWeatherIcon(weathercode);
 
-    document.getElementById("weather").textContent =
-      `${icon} ${temperature}°C · Wind: ${windspeed} mph`;
+    document.getElementById("condition").textContent = `Condition: ${icon}`;
+    document.getElementById("temp").textContent =
+      `: ${parseInt(temperature)}°C`;
+    document.getElementById("wind").textContent = `: ${parseInt(windspeed)} mph`;
   }
 
   getWeather();
