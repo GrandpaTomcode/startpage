@@ -53,14 +53,11 @@ document.addEventListener("DOMContentLoaded", () => {
   async function getWeather() {
     const API_KEY = "c2966e28064b8dd33cc823e6383a3cca";
     const city = "Brighton";
-    console.log("API key:", API_KEY); // before the fetch
     const res = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`,
     );
 
     const data = await res.json();
-
-    console.log(data);
     const windSpeedMPH = (data.wind.speed * 2.237).toFixed(1);
     document.getElementById("location").textContent = data.name;
     document.getElementById("temp").textContent =
