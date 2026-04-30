@@ -98,7 +98,7 @@ a {
 .windContainer {
   display: flex;
   flex-direction: row;
-  margin-lefts: 50px;
+  margin-left: 50px;
 }
 .dropdown {
   display: flex;
