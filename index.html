@@ -1,227 +1,246 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Houston</title>
-  </head>
-  <body>
-    <div class="container">
-      <div id="titleSearch">
-        <h1 id="greeting" class="title">Good Morning, Tom</h1>
-        <div class="weatherContainer">
-          <div class="localContainer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M16 10c0-2.21-1.79-4-4-4s-4 1.79-4 4 1.79 4 4 4 4-1.79 4-4m-6 0c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2"
-              ></path>
-              <path
-                d="M11.42 21.81c.17.12.38.19.58.19s.41-.06.58-.19c.3-.22 7.45-5.37 7.42-11.82 0-4.41-3.59-8-8-8s-8 3.59-8 8c-.03 6.44 7.12 11.6 7.42 11.82M12 4c3.31 0 6 2.69 6 6 .02 4.44-4.39 8.43-6 9.74-1.61-1.31-6.02-5.29-6-9.74 0-3.31 2.69-6 6-6"
-              ></path>
-            </svg>
-            <div id="location"></div>
-          </div>
-          <div class="tempContainer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-              <path
-                d="M15 11.81V4c0-1.65-1.35-3-3-3S9 2.35 9 4v7.81a6.03 6.03 0 0 0-2.91 6.25c.41 2.38 2.27 4.32 4.63 4.81.42.09.85.13 1.27.13 1.38 0 2.71-.46 3.79-1.34A5.98 5.98 0 0 0 18 17a5.99 5.99 0 0 0-3-5.19m-.48 8.3c-.95.77-2.16 1.06-3.39.8-1.54-.32-2.8-1.63-3.06-3.19-.32-1.84.65-3.64 2.34-4.38.36-.16.6-.52.6-.92V4c0-.55.45-1 1-1s1 .45 1 1v8.42c0 .4.24.76.6.92 1.46.64 2.4 2.08 2.4 3.66 0 1.21-.54 2.34-1.48 3.11Z"
-              ></path>
-            </svg>
-            <div id="temp"></div>
-          </div>
-          <div class="windContainer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M15.34 5c-1.94 0-2.96.61-3.85 1.14-.8.48-1.43.86-2.82.86s-2.02-.38-2.82-.86C4.96 5.6 3.95 5 2 5v2c1.39 0 2.02.38 2.82.86C5.71 8.4 6.72 9 8.67 9s2.96-.61 3.85-1.14c.8-.48 1.43-.86 2.82-.86s2.02.38 2.82.86c.89.54 1.9 1.14 3.85 1.14V7c-1.39 0-2.02-.38-2.82-.86C18.3 5.6 17.29 5 15.34 5m0 5c-1.94 0-2.96.61-3.85 1.14-.8.48-1.43.86-2.82.86s-2.02-.38-2.82-.86C4.96 10.6 3.95 10 2 10v2c1.39 0 2.02.38 2.82.86.89.54 1.9 1.14 3.85 1.14s2.96-.61 3.85-1.14c.8-.48 1.43-.86 2.82-.86s2.02.38 2.82.86c.89.54 1.9 1.14 3.85 1.14v-2c-1.39 0-2.02-.38-2.82-.86-.89-.54-1.9-1.14-3.85-1.14m0 5c-1.94 0-2.96.61-3.85 1.14-.8.48-1.43.86-2.82.86s-2.02-.38-2.82-.86C4.96 15.6 3.95 15 2 15v2c1.39 0 2.02.38 2.82.86.89.54 1.9 1.14 3.85 1.14s2.96-.61 3.85-1.14c.8-.48 1.43-.86 2.82-.86s2.02.38 2.82.86c.89.54 1.9 1.14 3.85 1.14v-2c-1.39 0-2.02-.38-2.82-.86-.89-.54-1.9-1.14-3.85-1.14"
-              ></path>
-            </svg>
-            <div id="wind"></div>
-          </div>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/style.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Houston</title>
+    </head>
+    <body>
+        <div class="container">
+            <div id="titleSearch">
+                <h1 id="greeting" class="title">Good Morning, Tom</h1>
+                <div class="weatherContainer">
+                    <div class="localContainer">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="M16 10c0-2.21-1.79-4-4-4s-4 1.79-4 4 1.79 4 4 4 4-1.79 4-4m-6 0c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2"
+                            ></path>
+                            <path
+                                d="M11.42 21.81c.17.12.38.19.58.19s.41-.06.58-.19c.3-.22 7.45-5.37 7.42-11.82 0-4.41-3.59-8-8-8s-8 3.59-8 8c-.03 6.44 7.12 11.6 7.42 11.82M12 4c3.31 0 6 2.69 6 6 .02 4.44-4.39 8.43-6 9.74-1.61-1.31-6.02-5.29-6-9.74 0-3.31 2.69-6 6-6"
+                            ></path>
+                        </svg>
+                        <div id="location"></div>
+                    </div>
+                    <div class="tempContainer">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                            <path
+                                d="M15 11.81V4c0-1.65-1.35-3-3-3S9 2.35 9 4v7.81a6.03 6.03 0 0 0-2.91 6.25c.41 2.38 2.27 4.32 4.63 4.81.42.09.85.13 1.27.13 1.38 0 2.71-.46 3.79-1.34A5.98 5.98 0 0 0 18 17a5.99 5.99 0 0 0-3-5.19m-.48 8.3c-.95.77-2.16 1.06-3.39.8-1.54-.32-2.8-1.63-3.06-3.19-.32-1.84.65-3.64 2.34-4.38.36-.16.6-.52.6-.92V4c0-.55.45-1 1-1s1 .45 1 1v8.42c0 .4.24.76.6.92 1.46.64 2.4 2.08 2.4 3.66 0 1.21-.54 2.34-1.48 3.11Z"
+                            ></path>
+                        </svg>
+                        <div id="temp"></div>
+                    </div>
+                    <div class="windContainer">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="M15.34 5c-1.94 0-2.96.61-3.85 1.14-.8.48-1.43.86-2.82.86s-2.02-.38-2.82-.86C4.96 5.6 3.95 5 2 5v2c1.39 0 2.02.38 2.82.86C5.71 8.4 6.72 9 8.67 9s2.96-.61 3.85-1.14c.8-.48 1.43-.86 2.82-.86s2.02.38 2.82.86c.89.54 1.9 1.14 3.85 1.14V7c-1.39 0-2.02-.38-2.82-.86C18.3 5.6 17.29 5 15.34 5m0 5c-1.94 0-2.96.61-3.85 1.14-.8.48-1.43.86-2.82.86s-2.02-.38-2.82-.86C4.96 10.6 3.95 10 2 10v2c1.39 0 2.02.38 2.82.86.89.54 1.9 1.14 3.85 1.14s2.96-.61 3.85-1.14c.8-.48 1.43-.86 2.82-.86s2.02.38 2.82.86c.89.54 1.9 1.14 3.85 1.14v-2c-1.39 0-2.02-.38-2.82-.86-.89-.54-1.9-1.14-3.85-1.14m0 5c-1.94 0-2.96.61-3.85 1.14-.8.48-1.43.86-2.82.86s-2.02-.38-2.82-.86C4.96 15.6 3.95 15 2 15v2c1.39 0 2.02.38 2.82.86.89.54 1.9 1.14 3.85 1.14s2.96-.61 3.85-1.14c.8-.48 1.43-.86 2.82-.86s2.02.38 2.82.86c.89.54 1.9 1.14 3.85 1.14v-2c-1.39 0-2.02-.38-2.82-.86-.89-.54-1.9-1.14-3.85-1.14"
+                            ></path>
+                        </svg>
+                        <div id="wind"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="searchWeatherContainer">
+                <form
+                    class="search"
+                    action="https://www.google.com/search"
+                    method="get"
+                    target="_blank"
+                >
+                    <input
+                        type="text"
+                        name="q"
+                        autocomplete="off"
+                        required
+                        autofocus
+                    />
+                    <div class="searchBottom"></div>
+                </form>
+                <nav>
+                    <ul class="dropdown">
+                        <li class="dropdownBtn">
+                            Web Tools
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="24px"
+                                viewBox="0 -960 960 960"
+                                width="24px"
+                                fill="#d97757"
+                            >
+                                <path
+                                    d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"
+                                />
+                            </svg>
+                            <ul class="dropdownMenu">
+                                <li>
+                                    <a
+                                        href="https://dash.cloudflare.com/"
+                                        target="_blank"
+                                        >Cloudflare</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://eu-west-2.signin.aws.amazon.com/oauth?client_id=arn:aws:signin:::console/canvas&code_challenge=NAqWzJrZVw7TCVe9OWAjJUDygy12qofgtR9F83Dc7-4&code_challenge_method=SHA-256&response_type=code&redirect_uri=https://eu-west-2.console.aws.amazon.com/console/home?ca-oauth-flow-id%3D5c95%26hashArgs%3D%2523%26isauthcode%3Dtrue%26region%3Deu-west-2%26state%3DhashArgsFromTB_eu-west-2_7af4495523015055"
+                                        target="_blank"
+                                        >AWS Email</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.whois.com/whois/"
+                                        target="_blank"
+                                        >WHOIS Lookup</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.domaindiagnosis.com/"
+                                        target="_blank"
+                                        >Domain Diagnosis</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.google.com/recaptcha/admin/create"
+                                        target="_blank"
+                                        >ReCaptcha</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdownBtn">
+                            Server
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="24px"
+                                viewBox="0 -960 960 960"
+                                width="24px"
+                                fill="#d97757"
+                            >
+                                <path
+                                    d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"
+                                />
+                            </svg>
+                            <ul class="dropdownMenu">
+                                <li>
+                                    <a
+                                        href="https://s1.osamcloud.com:2087/cpsess8925444434/?post_login=88173418659159&login=1"
+                                        target="_blank"
+                                        >S1</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://d01.osamcloud.com:2087/cpsess9030011984/?=undefined&login=1&post_login=26388976401093"
+                                        target="_blank"
+                                        >D01</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://d719.lon1.mysecurecloudhost.com:2087/"
+                                        target="_blank"
+                                        >D719</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://d725.lon1.mysecurecloudhost.com:2087/"
+                                        target="_blank"
+                                        >D725</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://server.osamweb.com:2087/"
+                                        target="_blank"
+                                        >OSAM Web</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://dev.osamcloud.com:2087/cpsess7751669662/?=undefined&login=1&post_login=16070976717772"
+                                        target="_blank"
+                                        >Dev</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdownBtn">
+                            Domains
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="24px"
+                                viewBox="0 -960 960 960"
+                                width="24px"
+                                fill="#d97757"
+                            >
+                                <path
+                                    d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"
+                                />
+                            </svg>
+                            <ul class="dropdownMenu">
+                                <li>
+                                    <a
+                                        href="https://secure.nominet.org.uk/auth/login.html"
+                                        target="_blank"
+                                        >Nominet</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://my.20i.com/login?r=%2F"
+                                        target="_blank"
+                                        >20i</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://clients.stablepoint.com/login?redirect=/dashboard/"
+                                        target="_blank"
+                                        >Stablepoint</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.123-reg.co.uk/"
+                                        target="_blank"
+                                        >123-reg</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-
-        <form
-          class="search"
-          action="https://www.google.com/search"
-          method="get"
-          target="_blank"
-        >
-          <input type="text" name="q" autocomplete="off" required autofocus />
-          <div class="searchBottom"></div>
-        </form>
-        <nav>
-          <ul class="dropdown">
-            <li class="dropdownBtn">
-              Web Tools
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="24px"
-                viewBox="0 -960 960 960"
-                width="24px"
-                fill="#d97757"
-              >
-                <path
-                  d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"
-                />
-              </svg>
-              <ul class="dropdownMenu">
-                <li>
-                  <a href="https://dash.cloudflare.com/" target="_blank"
-                    >Cloudflare</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://eu-west-2.signin.aws.amazon.com/oauth?client_id=arn:aws:signin:::console/canvas&code_challenge=NAqWzJrZVw7TCVe9OWAjJUDygy12qofgtR9F83Dc7-4&code_challenge_method=SHA-256&response_type=code&redirect_uri=https://eu-west-2.console.aws.amazon.com/console/home?ca-oauth-flow-id%3D5c95%26hashArgs%3D%2523%26isauthcode%3Dtrue%26region%3Deu-west-2%26state%3DhashArgsFromTB_eu-west-2_7af4495523015055"
-                    target="_blank"
-                    >AWS Email</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.whois.com/whois/" target="_blank"
-                    >WHOIS Lookup</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.domaindiagnosis.com/" target="_blank"
-                    >Domain Diagnosis</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://www.google.com/recaptcha/admin/create"
-                    target="_blank"
-                    >ReCaptcha</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li class="dropdownBtn">
-              Server
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="24px"
-                viewBox="0 -960 960 960"
-                width="24px"
-                fill="#d97757"
-              >
-                <path
-                  d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"
-                />
-              </svg>
-              <ul class="dropdownMenu">
-                <li>
-                  <a
-                    href="https://s1.osamcloud.com:2087/cpsess8925444434/?post_login=88173418659159&login=1"
-                    target="_blank"
-                    >S1</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://d01.osamcloud.com:2087/cpsess9030011984/?=undefined&login=1&post_login=26388976401093"
-                    target="_blank"
-                    >D01</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://d719.lon1.mysecurecloudhost.com:2087/"
-                    target="_blank"
-                    >D719</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://d725.lon1.mysecurecloudhost.com:2087/"
-                    target="_blank"
-                    >D725</a
-                  >
-                </li>
-                <li>
-                  <a href="https://server.osamweb.com:2087/" target="_blank"
-                    >OSAM Web</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://dev.osamcloud.com:2087/cpsess7751669662/?=undefined&login=1&post_login=16070976717772"
-                    target="_blank"
-                    >Dev</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li class="dropdownBtn">
-              Domains
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="24px"
-                viewBox="0 -960 960 960"
-                width="24px"
-                fill="#d97757"
-              >
-                <path
-                  d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"
-                />
-              </svg>
-              <ul class="dropdownMenu">
-                <li>
-                  <a
-                    href="https://secure.nominet.org.uk/auth/login.html"
-                    target="_blank"
-                    >Nominet</a
-                  >
-                </li>
-                <li>
-                  <a href="https://my.20i.com/login?r=%2F" target="_blank"
-                    >20i</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://clients.stablepoint.com/login?redirect=/dashboard/"
-                    target="_blank"
-                    >Stablepoint</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.123-reg.co.uk/" target="_blank"
-                    >123-reg</a
-                  >
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
+    </body>
     <script type="module" src="/src/main.js"></script>
-  </body>
 </html>
