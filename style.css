@@ -193,6 +193,7 @@ a {
         width: 50%;
     }
 }
+
 @media (max-width: 800px) {
     .weatherContainer {
         width: 80%;
