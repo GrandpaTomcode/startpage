@@ -74,6 +74,7 @@ a {
     border-radius: 2px;
     margin-top: 15px;
     background-color: #d97757;
+    opacity: 0;
 }
 
 .weatherContainer {
