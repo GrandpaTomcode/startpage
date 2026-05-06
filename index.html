@@ -6,11 +6,15 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
             rel="stylesheet"
         />
         <link rel="stylesheet" href="/style.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+            src="https://kit.fontawesome.com/ed1fb5b93d.js"
+            crossorigin="anonymous"
+        ></script>
         <title>Houston</title>
     </head>
     <body>
@@ -74,13 +78,15 @@
                     target="_blank"
                 >
                     <input
+                        id="search"
                         type="text"
                         name="q"
                         autocomplete="off"
-                        required
-                        autofocus
+                        placeholder="Search..."
                     />
-                    <div class="searchBottom"></div>
+                    <label for="search"
+                        ><i class="fa-solid fa-magnifying-glass"></i
+                    ></label>
                 </form>
                 <nav>
                     <ul class="dropdown">

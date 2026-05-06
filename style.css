@@ -29,52 +29,78 @@ a {
 }
 
 .container {
+    opacity: 0;
+    animation: fadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     width: 40%;
 }
 
+.search label {
+    opacity: 0;
+    animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+}
+
+.dropdown {
+    opacity: 0;
+    animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
 .title {
-    font-size: 3em;
+    font-size: 4em;
     color: #d97757;
     text-align: center;
     margin-bottom: 0px;
 }
 
 .search {
+    position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-top: 30px;
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search label {
+    position: absolute;
+    left: -24px;
+    color: #777777;
+}
+
+.search:has(input:hover),
+.search:has(input:focus) {
+    cursor: pointer;
+    border-bottom: 2px solid #d97757;
+}
+
+.search input:hover + label,
+.search input:focus + label {
+    color: #faf9f5;
 }
 
 .search input {
-    font-family: "Lora", serif;
+    font-family: "Inconsolata", serif;
     background-color: transparent;
-    font-size: 1.3em;
+    font-size: 1.1em;
     border: none;
     outline: none;
+    padding-left: 5px;
     color: #faf9f5;
-    text-align: center;
     width: 100%;
 }
 
 .search input::placeholder {
-    color: #faf9f5;
-    opacity: 0.3;
-    transition: color 0.4s ease;
+    color: transparent;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .search input:focus::placeholder {
-    color: transparent;
-}
-
-.searchBottom {
-    width: 100%;
-    height: 3px;
-    border-radius: 2px;
-    margin-top: 15px;
-    background-color: #d97757;
-    opacity: 0;
+    color: #777777;
 }
 
 .weatherContainer {
@@ -84,7 +110,7 @@ a {
     color: #f8eed2;
     margin: 0 auto;
     width: 70%;
-    height: 50px;
+    height: 45px;
 }
 
 .weatherContainer svg {
@@ -114,12 +140,12 @@ a {
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #d97757;
     list-style-type: none;
     letter-spacing: 1px;
     padding: 0px;
-    margin: 25px 0px 0px 0px;
+    margin: 10px 0px 0px 5px;
 }
 
 .dropdown:hover {
@@ -151,12 +177,16 @@ a {
 .dropdownMenu li {
     display: flex;
     width: 130px;
-    border-radius: 5.5px;
+    border-radius: 4px;
+    padding: 5px;
     text-decoration: none;
+    font-family: "Inconsolata", serif;
+    letter-spacing: 1px;
 }
 
 .dropdownMenu li:hover {
     background-color: #d97757;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .dropdownMenu a:hover {
     text-decoration: underline;
@@ -169,6 +199,11 @@ a {
 .dropdownBtn {
     display: flex;
     align-items: center;
+}
+
+.dropdownBtn:hover,
+.dropdownBtn:focus {
+    text-decoration: underline;
 }
 
 .dropdownBtn.open .dropdownMenu {
@@ -212,7 +247,7 @@ a {
         width: 90%;
     }
     .container {
-        width: 90%;
+        width: 85%;
     }
     .dropdownMenu {
         top: 100%;
