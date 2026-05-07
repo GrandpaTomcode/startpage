@@ -1,263 +1,269 @@
 html {
-  margin: 0px;
-  padding: 0px;
-  width: 100%;
-  height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100vh;
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Lora", serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-  background-color: #141413;
-  margin: 0px;
-  padding: 0px;
-  width: 100%;
-  height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    background-color: #141413;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 90vh;
 }
 
 a {
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  color: #faf9f5;
-  text-decoration: none;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    color: #faf9f5;
+    text-decoration: none;
 }
 
 .container {
-  opacity: 0;
-  animation: fadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  width: 40%;
+    opacity: 0;
+    animation: fadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    width: 40%;
 }
 
 .search label {
-  opacity: 0;
-  animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+    opacity: 0;
+    animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
 }
 
 .dropdown {
-  opacity: 0;
-  animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+    opacity: 0;
+    animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
 }
 @keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+    to {
+        opacity: 1;
+    }
 }
 .title {
-  font-size: 4em;
-  color: #d97757;
-  text-align: center;
-  margin-bottom: 0px;
+    font-size: 4em;
+    color: #d97757;
+    text-align: center;
+    margin-bottom: 0px;
 }
 
 .search {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 0;
-  border-bottom: 2px solid transparent;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .search label {
-  position: absolute;
-  left: -24px;
-  color: #777777;
+    position: absolute;
+    left: -24px;
+    color: #777777;
 }
 
 .search:has(input:hover),
 .search:has(input:focus) {
-  cursor: pointer;
-  border-bottom: 2px solid #d97757;
+    cursor: pointer;
+    border-bottom: 2px solid #d97757;
 }
 
 .search input:hover + label,
 .search input:focus + label {
-  color: #faf9f5;
+    color: #faf9f5;
 }
 
 .search input {
-  font-family: "Inconsolata", serif;
-  background-color: transparent;
-  font-size: 1.1em;
-  border: none;
-  outline: none;
-  padding-left: 5px;
-  color: #faf9f5;
-  width: 100%;
+    font-family: "Inconsolata", serif;
+    background-color: transparent;
+    font-size: 1.1em;
+    border: none;
+    outline: none;
+    padding-left: 5px;
+    color: #faf9f5;
+    width: 100%;
 }
 
 .search input::placeholder {
-  color: transparent;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    color: transparent;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .search input:focus::placeholder {
-  color: #777777;
+    color: #777777;
 }
 
 .weatherContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  color: #f8eed2;
-  margin: 0 auto;
-  width: 70%;
-  height: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #f8eed2;
+    margin: 0 auto;
+    width: 70%;
+    height: 45px;
 }
 
 .weatherContainer svg {
-  width: 20px;
-  height: 20px;
+    width: 20px;
+    height: 20px;
 }
 
 .tempContainer {
-  display: flex;
-  flex-direction: row;
-  margin-left: 50px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 50px;
 }
 
 .localContainer {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 .windContainer {
-  display: flex;
-  flex-direction: row;
-  margin-left: 50px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 50px;
 }
 
 .dropdown {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: baseline;
-  font-size: 1.1em;
-  color: #d97757;
-  list-style-type: none;
-  letter-spacing: 1px;
-  padding: 0px;
-  margin: 10px 0px 0px 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 1.1em;
+    color: #d97757;
+    list-style-type: none;
+    letter-spacing: 1px;
+    padding: 0px;
+    margin: 10px 0px 0px 5px;
 }
 
 .dropdown:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .dropdown > li {
-  position: relative;
+    position: relative;
 }
 
 .dropdownMenu {
-  display: flex;
-  flex-direction: column;
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  top: 100%;
-  left: -20px;
-  margin-top: 10px;
-  padding-left: 0px;
-  font-size: 16px;
-  list-style-type: none;
-  border-radius: 5.5px;
-  transition:
-    opacity 0.7s ease,
-    visibilty 0.7s ease;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    margin-top: 10px;
+    padding-left: 0px;
+    font-size: 16px;
+    list-style-type: none;
+    border-radius: 5.5px;
+    transition:
+        opacity 0.7s ease,
+        visibilty 0.7s ease;
 }
 
 .dropdownMenu li {
-  display: flex;
-  width: 130px;
-  border-radius: 4px;
-  padding: 5px;
-  text-decoration: none;
-  font-family: "Inconsolata", serif;
-  letter-spacing: 1px;
+    display: flex;
+    width: 130px;
+    border-radius: 4px;
+    padding: 5px;
+    text-decoration: none;
+    font-family: "Inconsolata", serif;
+    letter-spacing: 1px;
 }
 
 .dropdownMenu li:hover {
-  background-color: #d97757;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #d97757;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .dropdownMenu a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .dropdown ul li a:visited {
-  color: #faf9f5;
+    color: #faf9f5;
 }
 
 .dropdownBtn {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .dropdownBtn:hover,
 .dropdownBtn:focus {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .dropdownBtn.open .dropdownMenu {
-  opacity: 1;
-  visibility: visible;
+    opacity: 1;
+    visibility: visible;
 }
 @media (max-width: 1560px) {
-  .title {
-    font-size: 3.5em;
-  }
+    .title {
+        font-size: 3.5em;
+    }
 }
+
 @media (max-width: 1500px) {
-  html {
-    margin: 0px;
-    padding: 0px;
-  }
-  body {
-    width: 100%;
-  }
-  .container {
-    width: 80%;
-  }
-  .title {
-    font-size: 2em;
-  }
-  .weatherContainer {
-    width: 50%;
-  }
+    html {
+        margin: 0px;
+        padding: 0px;
+    }
+    body {
+        width: 100%;
+    }
+    .container {
+        width: 80%;
+    }
+    .title {
+        font-size: 3em;
+    }
+    .weatherContainer {
+        width: 50%;
+    }
+}
+@media (min-width: 1000px) {
+    .container {
+        width: 50%;
+    }
 }
 
 @media (max-width: 800px) {
-  .weatherContainer {
-    width: 80%;
-  }
+    .weatherContainer {
+        width: 80%;
+    }
 }
 
 @media (max-width: 600px) {
-  html {
-    width: 100%;
-  }
-  body {
-    width: 100%;
-  }
-  .weatherContainer {
-    width: 90%;
-  }
-  .container {
-    width: 85%;
-  }
-  .dropdownMenu {
-    top: 100%;
-    left: -10px;
-  }
-  .title {
-    width: 95%;
-  }
+    html {
+        width: 100%;
+    }
+    body {
+        width: 100%;
+    }
+    .weatherContainer {
+        width: 90%;
+    }
+    .container {
+        width: 85%;
+    }
+    .dropdownMenu {
+        top: 100%;
+        left: -10px;
+    }
+    .title {
+        width: 95%;
+    }
 }
