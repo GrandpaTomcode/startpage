@@ -236,7 +236,7 @@ a {
 }
 @media (min-width: 1000px) {
     .container {
-        width: 50%;
+        width: 40%;
     }
 }
 

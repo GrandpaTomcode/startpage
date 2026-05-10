@@ -1,3 +1,4 @@
+import Fuse from "fuse.js";
 document.addEventListener("DOMContentLoaded", () => {
   const greetingText = document.getElementById("greeting");
 
@@ -30,24 +31,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const items = document.querySelectorAll(".dropdownBtn");
 
-  items.forEach(item => {
+  items.forEach((item) => {
     item.addEventListener("click", function (e) {
       e.stopPropagation();
       this.classList.toggle("open");
-      items.forEach(other => {
+      items.forEach((other) => {
         if (other !== this) {
           other.classList.remove("open");
         }
       });
     });
-    document.querySelectorAll(".dropdownMenu").forEach(menu => {
+    document.querySelectorAll(".dropdownMenu").forEach((menu) => {
       menu.addEventListener("click", function (e) {
         e.stopPropagation();
       });
     });
   });
   document.addEventListener("click", function () {
-    items.forEach(item => item.classList.remove("open"));
+    items.forEach((item) => item.classList.remove("open"));
   });
 
   async function getWeather() {
@@ -66,4 +67,43 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   getWeather();
+
+  const allLinks = [...document.querySelectorAll(".dropdownMenu a")].map(
+    (a) => ({
+      name: a.textContent.trim(),
+      url: a.href,
+      element: a,
+    }),
+  );
+
+  const fuse = new Fuse(allLinks, {
+    keys: ["name"],
+    threshold: 0.4,
+  });
+
+  const searchInput = document.querySelector('#search'); // adjust to your selector
+  const defaultPlaceholder = 'Search...';
+  
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.trim();
+  
+    if (!query) {
+      searchInput.placeholder = defaultPlaceholder;
+      return;
+    }
+  
+    const results = fuse.search(query);
+    searchInput.placeholder = results.length > 0 ? results[0].item.name : defaultPlaceholder;
+  });
+  
+  searchInput.addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter') return;
+  
+    const results = fuse.search(searchInput.value.trim());
+    if (results.length > 0) {
+      window.open(results[0].item.url, '_blank');
+      searchInput.value = '';
+      searchInput.placeholder = defaultPlaceholder;
+    }
+  });
 });
